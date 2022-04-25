@@ -1,9 +1,9 @@
 import React from 'react';
+import FormNegocio from '../components/FormNegocio';
 
 const Negocio = () => (
     <div className="title">
-        <h4>Negócio</h4>
-        <p>Essa é minha página negócio.</p>
+        <FormNegocio></FormNegocio>
     </div>
 );
 
