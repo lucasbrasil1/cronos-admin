@@ -1,9 +1,13 @@
 import React from 'react';
+import StaticDatePickerDemo from '../components/StaticDatePickerDemo';
+import TimeDisplay from '../components/TimeDisplay';
 
 const Home = () => (
     <div className="title">
-        <h4>Home</h4>
-        <p>Essa é minha página inicial.</p>
+        <h1>Gerênciamento</h1>
+        <StaticDatePickerDemo/>
+        <TimeDisplay />
+        <p>Descrição do horário</p>
     </div>
 );
 

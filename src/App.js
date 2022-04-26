@@ -13,7 +13,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { Routes, Route } from 'react-router-dom';
-import { Box } from '@mui/system';
+import Box from '@mui/system/Box';
+import Container from '@mui/material/Container';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -68,8 +69,7 @@ const AppBar = styled(MuiAppBar, {
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-    display: 'absolute'
+    duration: theme.transitions.duration.leavingScreen
   }),
   ...(open && {
     marginLeft: drawerWidth,
@@ -114,8 +114,8 @@ export default function App (){
       <ThemeProvider theme={mdTheme}>
         <CssBaseline />
         <Box sx={{ display: 'flex' }}>
-          <AppBar position="fixed" open={open}>
-            <Toolbar>
+          <AppBar position="absolute" open={open}>
+            <Toolbar >
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -144,7 +144,7 @@ export default function App (){
               {mainListItems}
             </List>
           </Drawer>
-          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Container component="main" sx={{ flexGrow: 1, p: 3, marginTop: 8}}>
             <Routes>  
                 <Route path="/" element={ <Home/> } />
                 <Route path="negocio" element={ <Negocio/> } />
@@ -152,10 +152,9 @@ export default function App (){
                 <Route path="localizacao" element={ <Localizacao/> } />
                 <Route path="profissionais" element={ <Profissionais /> } />
                 <Route path="personalizacao" element={ <Personalizacao />}/>
-                <Route path="*" element={ <NotFound />}/>
               </Routes>
-          </Box>
-    </Box>
-  </ThemeProvider>
+          </Container>
+        </Box>
+      </ThemeProvider>
     );
 }
