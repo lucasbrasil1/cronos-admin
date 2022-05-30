@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/auth";
+import { AuthContext } from "../../../contexts/auth";
 
 const Sidebar = () => {
   const { logout } = useContext(AuthContext);
@@ -52,7 +52,7 @@ const Sidebar = () => {
         </li>
         <li>
 
-          <Link to="unities">
+          <Link to="units">
 
             <div className="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-building" viewBox="0 0 16 16">

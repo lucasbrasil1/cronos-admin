@@ -7,3 +7,5 @@ export const TableHeaderRow = ({children}) => {
         </thead>
     );
 }
+
+export default TableHeaderRow;

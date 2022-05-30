@@ -5,3 +5,5 @@ export const Table = ({ children }) => {
     </table>
     );
 } 
+
+export default Table;

@@ -10,22 +10,29 @@ import { useContext } from "react";
 import LoginPage from "./pages/LoginPage";
 import { AuthProvider, AuthContext } from "./contexts/auth";
 import Layout from "./components/Layout";
-import Professional from "./components/Professionals/Professional";
-import NewProfessionalForm from "./components/Professionals/NewProfessionalForm";
-import ProfessionalsList from "./components/Professionals/ProfessionalsList";
-import Scheduler from "./components/Scheduler/Scheduler";
-import Professionals from "./components/Professionals/Professionals";
-import Work from "./components/Works/Work";
-import NewWorkForm from "./components/Works/NewWorkForm";
-import Works from "./components/Works/Works";
-import WorksList from "./components/Works/WorksList";
-import Business from "./components/Business/Business";
+import Professional from "./components/Modules/Professionals/Professional";
+import NewProfessionalForm from "./components/Modules/Professionals/NewProfessionalForm";
+import ProfessionalsList from "./components/Modules/Professionals/ProfessionalsList";
+import Scheduler from "./components/Modules/Scheduler/Scheduler";
+import Professionals from "./components/Modules/Professionals/Professionals";
+import Business from "./components/Modules/Business/Business";
+import BusinessForm from "./components/Modules/Business/BusinessForm";
+import Units from "./components/Modules/Units/Units";
+import Unit from "./components/Modules/Units/Unit";
+import NewUnitForm from "./components/Modules/Units/NewUnitForm";
+import UnitsList from "./components/Modules/Units/UnitsList";
+import { Appearance } from "./components/Modules/Appearance/Appearance";
+import Works from "./components/Modules/Works/Works";
+import Work from "./components/Modules/Works/Work";
+import NewWorkForm from "./components/Modules/Works/NewWorkForm";
+import WorksList from "./components/Modules/Works/WorksList";
+import { BusinessProvider } from "./contexts/BusinessContext";
 
 const AppRoutes = () => {
-    const Private = ({children}) => {
+    const Private = ({ children }) => {
         const { authenticated, loading } = useContext(AuthContext);
 
-        if(loading){
+        if (loading) {
             return (
                 <div className="loading">
                     Carregando...
@@ -33,7 +40,7 @@ const AppRoutes = () => {
             );
         }
 
-        if(!authenticated) {
+        if (!authenticated) {
             return <Navigate to="/login" />;
         }
 
@@ -46,20 +53,34 @@ const AppRoutes = () => {
         <Routers>
             <AuthProvider>
                 <Routes>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="/" element={<Private><Layout/></Private>}>
-                        <Route index element={<Scheduler/>}/>
-                        <Route path="business" element={<Business/>}/>
-                        <Route path="works" element={<Works />}>
-                            <Route path=":workId" element={<Work/>} />
-                            <Route path="new" element={<NewWorkForm />} />
-                            <Route index element={<WorksList/>} />
-                        </Route> 
-                        <Route path="professionals" element={<Professionals/>}>
-                            <Route path=":professionalId" element={<Professional/>} />
-                            <Route path="new" element={<NewProfessionalForm/>} />
-                            <Route index element={<ProfessionalsList/>} />
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="/" element={
+                        <Private>
+                            <BusinessProvider>
+                                <Layout />
+                            </BusinessProvider>
+                        </Private>
+                    }>
+                        <Route index element={<Scheduler />} />
+                        <Route path="business" element={<Business />} >
+                            <Route path="new" element={<BusinessForm />} />
                         </Route>
+                        <Route path="works" element={<Works />}>
+                            <Route path=":workId" element={<Work />} />
+                            <Route path="new" element={<NewWorkForm />} />
+                            <Route index element={<WorksList />} />
+                        </Route>
+                        <Route path="professionals" element={<Professionals />}>
+                            <Route path=":professionalId" element={<Professional />} />
+                            <Route path="new" element={<NewProfessionalForm />} />
+                            <Route index element={<ProfessionalsList />} />
+                        </Route>
+                        <Route path="units" element={<Units />}>
+                            <Route path=":unitId" element={<Unit />} />
+                            <Route path="new" element={<NewUnitForm />} />
+                            <Route index element={<UnitsList />} />
+                        </Route>
+                        <Route path="appearance" element={<Appearance />} />
                     </Route>
                 </Routes>
             </AuthProvider>

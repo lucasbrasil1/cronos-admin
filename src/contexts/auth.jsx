@@ -7,8 +7,7 @@ export const AuthProvider = ({children}) => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    
-    const businessId = 0;
+    const businessOwnerId = 1;
 
     useEffect(() => {
         const recoveredUser = localStorage.getItem("user");
@@ -44,7 +43,7 @@ export const AuthProvider = ({children}) => {
     };
 
     return (
-        <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout, businessId}}>
+        <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout, businessOwnerId: businessOwnerId}}>
             {children}
         </AuthContext.Provider>
     );

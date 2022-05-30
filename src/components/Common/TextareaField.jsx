@@ -7,3 +7,5 @@ export const TextareaField = ({ id, label, type, value, onChange }) => {
         </div>
     );
 }
+
+export default TextareaField;

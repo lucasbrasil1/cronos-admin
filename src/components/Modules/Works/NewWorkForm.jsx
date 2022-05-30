@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../../contexts/auth";
-import { api } from "../../services/api";
-import { Modal } from "../Common/Modal";
+import { AuthContext } from "../../../contexts/auth";
+import { api } from "../../../services/api";
 
-const NewWorksForm = () => {
+const NewWorkForm = () => {
     const { businessId } = useContext(AuthContext);
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
@@ -92,11 +91,8 @@ const NewWorksForm = () => {
                     </button>
                 </div>
             </form>
-            <Modal id="modalSucesso" title="Sucesso!" body="Cadastro realizado com sucesso!" buttonText="OK" buttonColor="primary"/>
         </div>
     );
 }
 
-export default NewWorksForm;
-
-//
+export default NewWorkForm;
