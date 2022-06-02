@@ -5,7 +5,7 @@ import {
     Navigate
 } from "react-router-dom";
 
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 import LoginPage from "./pages/LoginPage";
 import { AuthProvider, AuthContext } from "./contexts/auth";
@@ -27,6 +27,8 @@ import Work from "./components/Modules/Works/Work";
 import NewWorkForm from "./components/Modules/Works/NewWorkForm";
 import WorksList from "./components/Modules/Works/WorksList";
 import { BusinessProvider } from "./contexts/BusinessContext";
+import { ActiveDays } from "./components/Modules/Units/ActiveDays";
+import { SchedulerContextProvider } from "./contexts/SchedulerContext";
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -61,7 +63,11 @@ const AppRoutes = () => {
                             </BusinessProvider>
                         </Private>
                     }>
-                        <Route index element={<Scheduler />} />
+                        <Route index element={
+                            <SchedulerContextProvider>
+                                <Scheduler />
+                            </SchedulerContextProvider>
+                        } />
                         <Route path="business" element={<Business />} >
                             <Route path="new" element={<BusinessForm />} />
                         </Route>

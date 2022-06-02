@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/auth";
 
@@ -10,7 +10,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="d-flex flex-column flex-shrink-0 bg-dark h-100" style={{ width: "4.5rem" }}>
+    <div className="d-flex flex-column flex-shrink-0 bg-dark border-right" style={{ width: "4.5rem" }}>
       <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li className="nav-item">
           <Link to="/">

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { createBusiness, getBusinessByBusinessOwner, updateBusiness } from "../services/Business/businessApi";
+import { getProfessionalsByBusiness } from "../services/Professionals/professionalsApi";
 import { AuthContext } from "./auth";
 
 export const BusinessContext = createContext();
@@ -21,7 +22,6 @@ export const BusinessProvider = ({ children }) => {
     useEffect(() => {
         getBusinessByBusinessOwner(businessOwnerId)
             .then((data) => {
-                console.log("fetched:", data);
                 setBusinessExists(true);
                 setData(data);
                 updateInputValues(data);
@@ -29,7 +29,6 @@ export const BusinessProvider = ({ children }) => {
             .catch((error) => {
                 setBusinessExists(false);
             });
-
     }, [])
 
 

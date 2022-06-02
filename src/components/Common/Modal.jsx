@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Modal = ({id, title, body, buttonText, buttonColor}) => {
     return (
         <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">

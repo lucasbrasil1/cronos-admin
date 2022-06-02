@@ -1,3 +1,4 @@
+import React from "react";
 import { IconDelete } from "./IconDelete";
 import { IconEdit } from "./IconEdit";
 

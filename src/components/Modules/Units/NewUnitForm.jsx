@@ -1,70 +1,70 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { PageTitle } from "../../Common/PageTitle";
 import { TextField } from "../../Common/TextField";
 import { UnitsContext } from "../../../contexts/UnitsContext";
 import { ActiveDays } from "./ActiveDays";
 
 const NewUnitForm = () => {
-    const {
-        unitName,
-        handleNameChange,
-        zipCode,
-        handleZipCodeChange,
-        photoPath,
-        handlePhotoPathChange,
-        country,
-        handleCountryChange,
-        state,
-        handleStateChange,
-        city,
-        handleCityChange,
-        address,
-        handleAddressChange,
-        phoneNumber,
-        handlePhoneNumberChange
-    } = useContext(UnitsContext);
+  const {
+    unitName,
+    handleNameChange,
+    zipCode,
+    handleZipCodeChange,
+    photoPath,
+    handlePhotoPathChange,
+    country,
+    handleCountryChange,
+    state,
+    handleStateChange,
+    city,
+    handleCityChange,
+    address,
+    handleAddressChange,
+    phoneNumber,
+    handlePhoneNumberChange
+  } = useContext(UnitsContext);
 
 
 
-    return (
-        <div className="d-flex flex-column gap-3">
-            <PageTitle>Adicionar Unidade</PageTitle>
-            <form className="form">
-                <div className="row">
-                    <TextField
-                        id="unitName"
-                        label="Nome:"
-                        value={unitName}
-                        onChange={handleNameChange}
-                        size="6"
-                    />
-                    <TextField
-                        id="unitZipCode"
-                        label="Cep:"
-                        value={zipCode}
-                        onChange={handleZipCodeChange}
-                        size="6"
-                    />
-                    <TextField
-                        id="unitPhoto"
-                        label="Foto:"
-                        value={photoPath}
-                        onChange={handlePhotoPathChange}
-                        size="6"
-                    />
-                    <TextField id="country" label="País:" value={country} onChange={handleCountryChange} size="6" />
-                    <TextField id="state" label="Estado:" value={state} onChange={handleStateChange} size="6" />
-                    <TextField id="city" label="Cidade:" value={city} onChange={handleCityChange} size="6" />
-                    <TextField id="address" label="Endereço:" value={address} onChange={handleAddressChange} size="6" />
-                    <TextField id="phoneNumber" label="Telefone:" value={phoneNumber} onChange={handlePhoneNumberChange} size="6" />
-                </div>
-                <hr/>
-                <div className="row">
-                    <ActiveDays />
-                </div>
-            </form>
+  return (
+    <div className="d-flex flex-column gap-3">
+      <PageTitle>Adicionar Unidade</PageTitle>
+      <form className="form">
+        <div className="row">
+          <TextField
+            id="unitName"
+            label="Nome:"
+            value={unitName}
+            onChange={handleNameChange}
+            size="6"
+          />
+          <TextField
+            id="unitZipCode"
+            label="Cep:"
+            value={zipCode}
+            onChange={handleZipCodeChange}
+            size="6"
+          />
+          <TextField
+            id="unitPhoto"
+            label="Foto:"
+            value={photoPath}
+            onChange={handlePhotoPathChange}
+            size="6"
+          />
+          <TextField id="country" label="País:" value={country} onChange={handleCountryChange} size="6" />
+          <TextField id="state" label="Estado:" value={state} onChange={handleStateChange} size="6" />
+          <TextField id="city" label="Cidade:" value={city} onChange={handleCityChange} size="6" />
+          <TextField id="address" label="Endereço:" value={address} onChange={handleAddressChange} size="6" />
+          <TextField id="phoneNumber" label="Telefone:" value={phoneNumber} onChange={handlePhoneNumberChange} size="6" />
         </div>
-    );
+        <hr />
+        <div className="row">
+          <ActiveDays />
+        </div>
+      </form>
+    </div>
+  );
 }
 
 export default NewUnitForm;

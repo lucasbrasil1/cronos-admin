@@ -1,3 +1,4 @@
+import React from "react";
 import { BusinessForm } from "./BusinessForm"
 
 const Business = () => {

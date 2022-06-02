@@ -1,3 +1,5 @@
+import React from "react";
+
 export const IconDelete = ({ size, color }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill={color} className="bi bi-pencil-square" viewBox={`0 0 ${size} ${size}`} >
