@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { BusinessContext } from "../../../contexts/BusinessContext";
-import { PageTitle } from "../../Common/PageTitle";
 import TextareaField from "../../Common/TextareaField";
 import TextField from "../../Common/TextField";
 
@@ -18,7 +17,6 @@ export const BusinessForm = () => {
     return (
         <>
             <div className="d-flex flex-column text-center gap-3">
-                <PageTitle>Negócio</PageTitle>
                 <div className="container text-start">
                     <TextField
                         id="businessName"

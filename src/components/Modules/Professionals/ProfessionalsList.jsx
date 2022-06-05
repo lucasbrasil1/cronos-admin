@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProfessionalsContext } from "../../../contexts/ProfessionalsContext";
-import { PageTitle } from "../../Common/PageTitle";
 import Table from "../../Common/Table";
 import TableHeaderRow from "../../Common/TableHeaderRow";
 
@@ -10,7 +9,6 @@ const ProfessionalsList = () => {
 
     return (
         <div className="d-flex flex-column text-center gap-3">
-            <PageTitle>Profissionais</PageTitle>
             <Table color="dark">
                 <TableHeaderRow>
                     <th className="col-5" scope="col">Foto</th>

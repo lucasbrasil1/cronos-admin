@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../contexts/auth";
 import { api } from "../../../services/api";
 import { getWorksByBusiness } from "../../../services/Works/worksApi";
-import { PageTitle } from "../../Common/PageTitle";
 import Table from "../../Common/Table";
-import TableBodyRow from "../../Common/TableBodyRow";
 import TableHeaderRow from "../../Common/TableHeaderRow";
 
 const WorksList = () => {
@@ -34,7 +31,6 @@ const WorksList = () => {
 
     return (
         <div className="d-flex flex-column text-center gap-3">
-            <PageTitle>Lista de serviços</PageTitle>
             <Table color="dark">
                 <TableHeaderRow>
                     <th className="col-7" scope="col">Nome</th>

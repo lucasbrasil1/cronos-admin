@@ -29,6 +29,7 @@ import WorksList from "./components/Modules/Works/WorksList";
 import { BusinessProvider } from "./contexts/BusinessContext";
 import { ActiveDays } from "./components/Modules/Units/ActiveDays";
 import { SchedulerContextProvider } from "./contexts/SchedulerContext";
+import { LayoutProvider } from "./contexts/LayoutContext";
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -59,7 +60,9 @@ const AppRoutes = () => {
                     <Route path="/" element={
                         <Private>
                             <BusinessProvider>
-                                <Layout />
+                                <LayoutProvider>
+                                    <Layout />
+                                </LayoutProvider>
                             </BusinessProvider>
                         </Private>
                     }>

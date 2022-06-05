@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PageTitle } from "../../Common/PageTitle";
 import Table from "../../Common/Table";
 import TableHeaderRow from "../../Common/TableHeaderRow";
-import { UnitRow } from "./UnitRow";
 
 const UnitsList = () => {
     return(
         <div className="d-flex flex-column text-center gap-3">
-            <PageTitle>Unidades</PageTitle>
             <Table color="dark">
                 <TableHeaderRow>
                     <th className="col-5" scope="col">Nome</th>

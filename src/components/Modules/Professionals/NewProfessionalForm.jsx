@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { PageTitle } from "../../Common/PageTitle";
 import { ProfessionalsContext } from "../../../contexts/ProfessionalsContext";
 import TextareaField from "../../Common/TextareaField";
 import TextField from "../../Common/TextField";
@@ -22,7 +21,6 @@ const NewProfessionalForm = () => {
 
     return (
         <div className="d-flex flex-column gap-3">
-            <PageTitle>Adicionar Profissional</PageTitle>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="row my-1">
                     <TextField

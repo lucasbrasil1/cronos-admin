@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { PageTitle } from "../../Common/PageTitle";
 import { TextField } from "../../Common/TextField";
 import { UnitsContext } from "../../../contexts/UnitsContext";
 import { ActiveDays } from "./ActiveDays";
@@ -28,7 +27,6 @@ const NewUnitForm = () => {
 
   return (
     <div className="d-flex flex-column gap-3">
-      <PageTitle>Adicionar Unidade</PageTitle>
       <form className="form">
         <div className="row">
           <TextField
